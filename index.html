@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/로고끼룩.png" type="image/png">
-    <title>이게 뭐임?</title>
+    <title>독수리 - 사이트 메인</title>
     <style>
         @font-face {
             font-family: 'Cafe24Ohsquare';
@@ -50,7 +50,11 @@
             display: flex;
             flex-direction: row;
         }
+        .header > a {
+            display: inline-block;
+        }
         #logo {
+            display: block;
             width: 75px;
             height: 75px;
             margin-right: 10px;
@@ -75,6 +79,10 @@
             opacity: 1;
             transform: translateY(-40px);
         }
+        a:link, a:visited {
+            color: white;
+            text-decoration: none;
+        }
         #menus {
             box-sizing: border-box;
             list-style: none;
@@ -95,7 +103,7 @@
         }
         .main > p {
             margin: 0;
-            transform: translateY(-100px);
+            transform: translateY(-50px);
         }
         .eagleytt {
             display: inline-block;
@@ -128,6 +136,59 @@
             width: 250px;
             height: 250px;
         }
+        .mainmenu {
+            box-sizing: border-box;
+            list-style: none;
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 50px;
+            padding: 0;
+            width: 1000px;
+        }
+        .mainmenu > li {
+            width: 450px;
+            height: 350px;
+            border: white 2px solid;
+            border-radius: 30px;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: translateY(30px);
+            transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .mainmenu > li.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tooltipimpact {
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+        .tooltiptext {
+            width: 200px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            left: 25%;
+            transform: translateY(-25px);
+            opacity: 0;
+            transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .tooltipimpact:hover + .tooltiptext {
+            opacity: 1;
+            transform: translateY(50px);
+        }
+        .tooltiptext:hover {
+            opacity: 1;
+            transform: translateY(50px);
+        }
         @media screen and (((max-width: 425px) and (orientation: portrait)) or ((max-width: 740px) and (orientation: landscape))) {
             .mainfont {
                 font-family: 'Cafe24Ohsquare';
@@ -142,7 +203,6 @@
                 color: #fff;
                 display: flex;
                 flex-direction: row;
-                align-items: center;
                 justify-content: flex-start;
                 padding: 0 20px;
                 margin-bottom: 20px;
@@ -159,7 +219,7 @@
         <div id="container">
             <div class="header">
                 <div id="themostimport">
-                    <img id="logo" src="images/로고끼룩.png" alt="끼룩? - 웹사이트 로고">
+                    <a href="https://suil0304.github.io/"><img id="logo" src="images/로고끼룩.png" alt="끼룩? - 웹사이트 로고"></a>
                     <div id="wtff">
                         <h1 class="title">이게 뭐임?</h1>
                         <p class="wtf">수?리</p>
@@ -184,19 +244,19 @@
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    그래서 이것들은 과연 뭘까요
+                </p>
+                <ul class="mainmenu">
+                    <li>
+                        <a class="tooltipimpact" href="https://drive.google.com/drive/folders/11qTi9xU6FCWq16cKQUoopI2Qn04OE5LB?usp=drive_link">'FNF Psych Engine'으로<br>돌아가는 여러 모드를 만듬</a>
+                        <div class="tooltiptext">FNF에 관심 있으면 추천 안 함</div>
+                    </li>
+                    <li>
+                        <a class="tooltipimpact" href="https://suil0304.github.io/">이 사이트를 만들었음</a>
+                        <div class="tooltiptext">불만 있음?</div>
+                    </li>
+                </ul>
+                <p>
                     <br>
                     <br>
                     <br>
@@ -221,7 +281,28 @@
                     뭐 아닐 수도 있고
                 </p>
             </div>
-            
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const boxes = document.querySelectorAll(".mainmenu > li");
+            
+                function checkScroll() {
+                    const triggerHeight = window.innerHeight * 0.9;
+            
+                    boxes.forEach(box => {
+                        const boxTop = box.getBoundingClientRect().top;
+                        if (boxTop < triggerHeight) {
+                            box.classList.add("show");
+                        }
+                        else {
+                            box.classList.remove("show");
+                        }
+                    });
+                }
+            
+                window.addEventListener("scroll", checkScroll);
+                checkScroll();
+            });
+        </script>
     </body>
 </html>
