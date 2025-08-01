@@ -20,7 +20,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 20px;
+                gap: 0px 20px;
                 width: 100%;
                 margin: 0px auto;
                 max-width: 700px;
@@ -31,6 +31,15 @@
                 color: #fff;
                 font-size: 24px;
                 cursor: pointer;
+            }
+
+            @media screen and (((max-width: 500px) and (orientation: portrait)) or ((max-width: 700px) and (orientation: landscape))) {
+                #buttonPack {
+                    gap: 150px;
+                }
+                #patchnotes {
+                    max-width: 400px;
+                }
             }
         </style>
     </head>
@@ -114,7 +123,7 @@
                 div.innerHTML = `
                     <h3 id="${version}" class="tipImpact" style='margin-bottom: 5px;'>${version} <span class="tipText">${note.date}</span></h3>
                     <p>${note.description}</p>
-                    <ul style="marker: none;>
+                    <ul style="marker: none; padding: 0px;">
                     ${note.changes.map(change => {
                         const [main, sub] = change.split(" - ");
                         return `<li">${main}<br><small>${sub || ""}</small></li>`;
