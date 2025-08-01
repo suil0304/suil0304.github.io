@@ -1,0 +1,32 @@
+.tipImpact {
+    display: inline-block;
+    color: skyblue;
+    position: relative;
+}
+.tipText {
+    width: 250px;
+    z-index: 1000;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    left: 0%;
+    transform: translateY(-10%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tipImpact:hover .tipText {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(60%);
+}
+@media screen and (((max-width: 500px) and (orientation: portrait)) or ((max-width: 700px) and (orientation: landscape))) {
+    .tipText {
+        width: 100px;
+        font-size: 11px;
+    }
+}
