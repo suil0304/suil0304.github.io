@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../images/로고끼룩.png" type="image/png">
+        <title>독수리봇 설치</title>
+        <link rel="stylesheet" href="../css/normalSetting.css">
+        <link rel="stylesheet" href="../css/tipbox.css">
+        <link rel="stylesheet" href="../css/appear.css">
+        <style>
+            #buttonPack {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                gap: 300px;
+                height: auto;
+            }
+            #patchnotes {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                margin: 0px auto;
+                max-width: 700px;
+            }
+            .arrowButton {
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="titleAndLogoPack" onclick="location.href='https://suil0304.github.io/'">
+                <img id="logo" src="../images/로봇끼룩.png" alt="끼룩? - 웹사이트 로고">
+                <div id="titlePack">
+                    <h1 class="title">독수리봇 마크2 길드 설치</h1>
+                    <p class="titleDesc">쉽고 간단!</p>
+                </div>
+            </div>
+            <ul id="menus">
+                <li>asd</li>
+                <li>asd</li>
+            </ul>
+        </header>
+        <main class="mainFont">
+            <section id="latest-patchnote" class="appear">
+                <h2 style="margin-bottom: -3px;">최신 패치 노트</h2><br>
+            </section>
+            <br>
+            <br>
+            <br>
+            <h1 class="appear">
+                <a href="#install" class="tipImpact" style="color: skyblue;">이 글을 누르면 바로 설치로 넘어갑니다.<span class="tipText">누르면 설치로 가져요!</span></a><br>
+            </h1>
+            <br>
+            <br>
+            <br>
+            <section id="small-talk">
+                <h1 class="appear">
+                    * 드디어 나왔다! *<br>
+                </h1>
+                <br>
+                <p class="appear">
+                    예전에 죽어버린 원본 독수리봇을 대체하기 위해<br>
+                    <a href="https://youtu.be/9oayxL1J2nY?si=CqFs3W1kq65C2OBz" class="tipImpact" style="color: skyblue;">기능이 있는 건지 없는 건지 모를 그 봇 등장!<span class="tipText">누르면 '독수리봇의 장례식' 영상으로 가져요!</span></a><br>
+                    (반 기계가 된 건 개조와 관계가 없음을 알립니다.)<br>
+                </p>
+                <br>
+                <p class="appear">
+                    마음을 다시 잡아 'JavaScript'에서 'Python'으로 프로그래밍 언어 체인지!<br>
+                    기술도 업! 귀차니즘도 업!<br>
+                    이제 띄우는 건 귀찮으니 가이드나 할까요<br>
+                </p>
+                <br>
+            </section>
+            <section id="guide">
+                <h1 class="appear">
+                    <span class="tipImpact">사실 딱히 필요 없습니다.<span class="tipText">나중에 추가한다면 추가해 볼게요</span></span><br>
+                </h1>
+                <br>
+            </section>
+            <section id="install">
+                <p class="appear">
+                    <a href="https://suil0304.github.io/eaglebot/service.html" target="_blank" class="tipImpact" style="color: skyblue;">일단 여기 다 읽어봐주세요<span class="tipText">누르면 '사용자 약관과 개인 정보 보호 정책'이 다른 창으로 열려요!</span></a><br>
+                    <a href="https://suil0304.github.io/eaglebot/service.html#terms-of-service" target="_blank" class="tipImpact" style="color: skyblue;">여기로는 바로 사용자 약관에 갈 수 있어요<span class="tipText">누르면 '사용자 약관과 개인 정보 보호 정책'의 '사용자 약관' 섹션이 다른 탭으로 열려요!</span></a><br>
+                    <a href="https://suil0304.github.io/eaglebot/service.html#privacy-policy" target="_blank" class="tipImpact" style="color: skyblue;">여기로는 바로 개인 정보 보호 정책에 갈 수 있어요<span class="tipText">누르면 '사용자 약관과 개인 정보 보호 정책'의 '개인 정보 보호 정책' 섹션이 다른 탭으로 열려요!</span></a><br>
+                </p>
+                <br>
+                <p class="appear">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1158417192669429900&permissions=584384995388528&integration_type=0&scope=bot+applications.commands" target="_blank" class="tipImpact" style="color: skyblue;">다 읽으셨다면 이 글을 눌러 설치하시면 됩니다<span class="tipText">누르면 디스코드 봇을 설치할 수 있는 곳으로 가져요!</span></a><br>
+                </p>
+                <br>
+            </section>
+            <section id="patchnotes" class="appear"></section>
+            <section id="buttonPack" class="appear">
+                <button id="prevButton" class="arrowButton">←</button>
+                <div id="pageNum">1</div>
+                <button id="nextButton" class="arrowButton">→</button>
+            </section>
+        </main>
+        <footer class="mainFont" style="margin-top: 100px; opacity: 0.75;">
+            <p>Copyright 2023 '독수리봇 마크2' All Rights Reserved.</p>
+        </footer>
+        <script>
+            function makeAndAddPatchnote(container, version, note) {
+                const div = document.createElement("div");
+                div.id = version;
+                div.innerHTML = `
+                    <h3 id="${version}" class="tipImpact" style='margin-bottom: 5px;'>${version} <span class="tipText">${note.date}</span></h3>
+                    <p>${note.description}</p>
+                    <ul style="marker: none;>
+                    ${note.changes.map(change => {
+                        const [main, sub] = change.split(" - ");
+                        return `<li">${main}<br><small>${sub || ""}</small></li>`;
+                    }).join("<br><br>")}
+                    </ul>
+                `;
+                container.appendChild(div);
+            }
+            function renderPage(index, container, pageNum) {
+                container.innerHTML = "";
+                pages[index].forEach(([version, note]) => makeAndAddPatchnote(container, version, note));
+                pageNum.innerHTML = `${currentPage + 1}`;
+            }
+            function movePage(index, container, pageNum) {
+                renderPage(index, container, pageNum);
+                const el = document.getElementById("patchnotes");
+                const yOffset = -265;
+                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+
+            let currentPage = 0;
+            let pages = [];
+
+            fetch("patchnote.json").then(res => res.json()).then(data => {
+                const REVERSED_ENTRIES = Object.entries(data).reverse();
+
+                const [LATEST_VERSION, LATEST_NOTE] = REVERSED_ENTRIES[0];
+                const latestPatchnote = document.getElementById("latest-patchnote");
+                makeAndAddPatchnote(latestPatchnote, LATEST_VERSION, LATEST_NOTE)
+
+                const container = document.getElementById("patchnotes");
+                const pageNum = document.getElementById("pageNum");
+
+                for (let i = 0; i < REVERSED_ENTRIES.length; i += 1) {
+                    pages.push(REVERSED_ENTRIES.slice(i, i + 1));
+                }
+                renderPage(currentPage, container, pageNum);
+
+                document.getElementById("prevButton").onclick = () => {
+                    if (currentPage > 0) 
+                        currentPage--;
+                    else 
+                        currentPage = pages.length - 1;
+                    movePage(currentPage, container, pageNum);
+                };
+                document.getElementById("nextButton").onclick = () => {
+                    if (currentPage < pages.length - 1) 
+                        currentPage++;
+                    else 
+                        currentPage = 0;
+                    movePage(currentPage, container, pageNum);
+                };
+            });
+        </script>
+        <script src="../javascript/appear.js"></script>
+    </body>
+</html>
